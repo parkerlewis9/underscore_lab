@@ -11,6 +11,17 @@ average: function(data) {
         
     	}
       return sum/data.length;
+
+    },
+    
+// Contains
+
+contains: function(array, value) {
+      for(var i=0; i<array.length; i++) {
+        if (array[i] === value) {
+          return true;
+        }
+      }
     },
     
 // Confirm
@@ -75,7 +86,7 @@ shuffle: function(array) {
     },
 
 // Sample
-    sample: function(array, length) {
+sample: function(array, length) {
       
 // set up what happens when length is left off (optional parameter)
       
@@ -120,7 +131,7 @@ indexOf: function(array, value) {
         
         var output = -1;
         if (array[i] === value) {
-          return array.indexOf(value);
+          return i;
         }
         
       }
@@ -140,6 +151,54 @@ pluck: function(array, key) {
    
 //end of function
     },
+
+// Each
+each: function(array, func) {
+      for (var i=0; i<array.length; i++) {
+        func(array[i]);
+      }
+      
+    },
+
+
+// Compact
+
+compact: function(array) {
+      
+      var newArr = [];
+      for(var i=0; i<array.length; i++) {
+        if(array[i]) {
+          newArr.push(array[i]);
+        }
+        
+      }
+      return newArr;
+    },
+
+// Map
+map: function(arr, func) {
+      var newArr= [];
+      for(var i=0; i<arr.length; i++) {
+        var val= func(arr[i]);
+        newArr.push(val);
+      }
+      return newArr;
+      
+// End of function
+    },
+// Filter
+filter: function(arr, func) {
+      var myArr = [];
+      for(var i=0; i < arr.length; i++) {
+        
+        if (func(arr[i]) === true) {
+          myArr.push(arr[i]);
+        }
+      }
+      return myArr;
+      
+    },
+
 
 
 
