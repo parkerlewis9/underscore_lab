@@ -1,7 +1,6 @@
 // PUT YOUR CODE HERE!!!
-var _ = (function() {
+module.exports = {
 
-return {
 
 // Average
 average: function(data) {
@@ -200,10 +199,6 @@ filter: function(arr, func) {
     },
 
 
-
-
-
-  };
   
    
-})();
+}
